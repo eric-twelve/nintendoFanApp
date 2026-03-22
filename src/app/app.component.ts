@@ -13,14 +13,11 @@ import { AppElement } from './models/element.model';
 })
 export class AppComponent {
   title = 'NintendoFanApp';
-<<<<<<< Updated upstream
-=======
-
+  
   elements: AppElement[] = DADES_MOCK;
   
   constructor() {
     console.log('NintedoFanApp has been started, it will be fun \n - EricALvarezLinares - ');
     console.log(DADES_MOCK);
   }
->>>>>>> Stashed changes
 }
