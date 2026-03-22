@@ -1,0 +1,79 @@
+<<<<<<< Updated upstream
+=======
+
+$primary-color: #f5b027;
+$secondary-color: #f8d57e;
+
+
+* {
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+}
+
+body {
+  height: 100%;
+  padding: 1%;
+  color: #3a2e1f;
+}
+
+h1 {
+  background: white;
+  padding: 20px;
+
+  border-radius: 20px;
+  width: fit-content;
+  margin: 40px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  background: $primary-color;
+
+  thead {
+    background-color: $secondary-color;
+    text-align: center;
+    font-weight: bold;
+
+    th {
+      padding: 12px 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  tbody {
+    text-align: center;
+
+    td {
+      padding: 8px 8px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+p {
+  max-width: 600px;
+  margin: 20px auto;
+  line-height: 1.6;
+  padding: 15px;
+}
+
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+>>>>>>> Stashed changes

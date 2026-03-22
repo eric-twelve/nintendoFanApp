@@ -16,6 +16,7 @@
     --hot-red: oklch(61.42% 0.238 15.34);
     --orange-red: oklch(63.32% 0.24 31.68);
 
+<<<<<<< Updated upstream
     --gray-900: oklch(19.37% 0.006 300.98);
     --gray-700: oklch(36.98% 0.014 302.71);
     --gray-400: oklch(70.9% 0.015 304.04);
@@ -334,3 +335,33 @@
 
 
 <router-outlet />
+=======
+<body>
+  <h1>NintendoFanApp</h1>
+  <h3>Aquesta app conté informació sobre l'història de Nintendo, així com els seus exits, catàleg de les seves consoles i
+    videojocs, des de el començament fins avui dia.</h3>
+  <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Any</th>
+      <th>Plataforma</th>
+      <th>Descripció</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let el of elements">
+      <td>{{ el.id }}</td>
+      <td>{{ el.nom }}</td>
+      <td>{{ el.any }}</td>
+      <td>{{ el.plataforma }}</td>
+      <td>{{ el.descripcio || '-' }}</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+<footer>
+  <p>Autor: Eric Alvarez Linares</p>
+</footer>
+>>>>>>> Stashed changes
