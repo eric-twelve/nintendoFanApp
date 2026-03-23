@@ -1,10 +1,11 @@
 $primary-color:#f5b027;
 $secondary-color:#f8d57e;
+
 *{
     margin: 0 auto;
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #f5b027, #f8d57e);
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
 }
 body{
     height: 100%;
