@@ -1,35 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
+<h1>NintendoFanApp</h1>
 
-<head>
-  <title>Nintendo's Fan App</title>
-</head>
+<h3>
+  Aquesta app conté informació sobre l'història de Nintendo, així com els seus exits,
+  catàleg de les seves consoles i videojocs.
+</h3>
 
-<body>
-  <h1>NintendoFanApp</h1>
-  <h3>Aquesta app conté informació sobre l'història de Nintendo, així com els seus exits, catàleg de les seves consoles i
-    videojocs, des de el començament fins avui dia.</h3>
-  <table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nom</th>
-      <th>Any</th>
-      <th>Plataforma</th>
-      <th>Descripció</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let el of elements">
-      <td>{{ el.id }}</td>
-      <td>{{ el.nom }}</td>
-      <td>{{ el.any }}</td>
-      <td>{{ el.plataforma }}</td>
-      <td>{{ el.descripcio || '-' }}</td>
-    </tr>
-  </tbody>
-</table>
-</body>
+<app-barra-cerca (buscar)="onBuscar($event)"></app-barra-cerca>
+
+<app-llista-elements [elements]="elementsFiltrats"></app-llista-elements>
+
 <footer>
   <p>Autor: Eric Alvarez Linares</p>
 </footer>

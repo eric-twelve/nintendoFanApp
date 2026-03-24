@@ -10,5 +10,5 @@ import { AppElement } from '../../models/element.model';
   styleUrls: ['./targeta-element.component.scss']
 })
 export class TargetaElementComponent {
-  @Input() element!: AppElement;
+  @Input() element!: AppElement; 
 }

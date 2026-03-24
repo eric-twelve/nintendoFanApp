@@ -1,1 +1,8 @@
-<p>targeta-element works!</p>
+<div class="targeta">
+  <h3>{{ element.nom | uppercase }}</h3>
+  <p><strong> Any:</strong> {{ element.any }}</p>
+  <p><strong>  Plataforma:</strong> {{ element.plataforma }}</p>
+  <p *ngIf="element.descripcio">
+    <strong> Descripció:</strong> {{ element.descripcio}}
+  </p>
+</div>

@@ -1,1 +1,10 @@
-<p>llista-elements works!</p>
+<div class="llista" *ngIf="elements.length > 0; else noResults">
+  <app-targeta-element
+    *ngFor="let el of elements; trackBy: trackById"
+    [element]="el">
+  </app-targeta-element>
+</div>
+
+<ng-template #noResults>
+  <p>No s'han trobat resultats 😢</p>
+</ng-template>

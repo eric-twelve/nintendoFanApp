@@ -1,6 +1,6 @@
-import { Component,Input } from '@angular/core';
-import { TargetaElementComponent } from '../targeta-element/targeta-element.component';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TargetaElementComponent } from '../targeta-element/targeta-element.component';
 import { AppElement } from '../../models/element.model';
 
 @Component({
@@ -8,10 +8,16 @@ import { AppElement } from '../../models/element.model';
   standalone: true,
   imports: [
     CommonModule,
-    TargetaElementComponent],
+    TargetaElementComponent
+  ],
   templateUrl: './llista-elements.component.html',
   styleUrls: ['./llista-elements.component.scss']
 })
 export class LlistaElementsComponent {
   @Input() elements: AppElement[] = [];
+
+  
+  trackById(index: number, element: AppElement) {
+    return element.id;
+  }
 }
