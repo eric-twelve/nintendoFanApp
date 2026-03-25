@@ -1,5 +1,17 @@
-<input
-  type="text"
-  placeholder="Buscar videojoc..."
-  (input)="onInput($event)"
->
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate class="form-cerca">
+  <input 
+    type="text" 
+    name="buscarText"
+    [(ngModel)]="buscarText"
+    #inputBuscar="ngModel"
+    minlength="3"
+    required
+    placeholder="Buscar videojoc..." 
+  >
+  <button type="submit" [disabled]="f.invalid">Buscar</button>
+  
+  <div class="error" *ngIf="inputBuscar.invalid && inputBuscar.touched">
+    <small *ngIf="inputBuscar.errors?.['required']">El camp es obligatori.</small>
+    <small *ngIf="inputBuscar.errors?.['minlength']">Son necessaris mínim 3 caracters.</small>
+  </div>
+</form>
