@@ -1,0 +1,39 @@
+{
+  "elements": [
+    {
+      "id": "1",
+      "nom": "Nintendo Switch OLED",
+      "descripcio": "Consola híbrida con pantalla OLED de 7 pulgadas",
+      "categoria": "consola",
+      "popular": true
+    },
+    {
+      "id": "2",
+      "nom": "Mario Kart 8 Deluxe",
+      "descripcio": "Juego de carreras multijugador",
+      "categoria": "videojoc",
+      "popular": true
+    },
+    {
+      "id": "3",
+      "nom": "Zelda Breath of the Wild",
+      "descripcio": "Aventura en mundo abierto",
+      "categoria": "videojoc",
+      "popular": false
+    },
+    {
+      "id": "4",
+      "nom": "Pro Controller",
+      "descripcio": "Mando profesional para Switch",
+      "categoria": "accessori",
+      "popular": true
+    },
+    {
+      "id": "5",
+      "nom": "Animal Crossing",
+      "descripcio": "Simulación de vida en isla",
+      "categoria": "videojoc",
+      "popular": false
+    }
+  ]
+}
