@@ -1,18 +1,22 @@
-
 <div *ngIf="carregant()" class="spinner-container">
   <div class="spinner"></div>
 </div>
-
 
 <div *ngIf="error()" class="error-container">
   <p>{{ error() }}</p>
   <button (click)="reintentar()">Reintentar</button>
 </div>
 
-
 <div *ngIf="!carregant() && !error()" class="grid">
+
   <div *ngFor="let el of elements()" class="card">
-    <h3>{{ el.nom }}</h3>
+    <h3>{{ el.titol }}</h3>
     <p>{{ el.descripcio }}</p>
+    <p><strong>Categoria:</strong> {{ el.categoria }}</p>
+    <p><strong>Preu:</strong> {{ el.preu }} €</p>
+    <p><strong>Stock:</strong> {{ el.unitats }}</p>
+    <span *ngIf="el.esPopular" class="badge">
+      🔥 Popular
+    </span>
   </div>
 </div>
