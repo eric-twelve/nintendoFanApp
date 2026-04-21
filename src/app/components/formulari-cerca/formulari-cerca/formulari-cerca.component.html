@@ -6,7 +6,7 @@
   <p *ngIf="validant()">Validant...</p>
   <div *ngIf="termeCerca.touched && termeCerca.errors">
     <p *ngIf="termeCerca.errors['minlength']">
-      Mínim 2 caràcters
+      Error! Mínim 2 caràcters
     </p>
     <p *ngIf="termeCerca.errors['maxlength']">
       Màxim 50 caràcters
@@ -15,11 +15,5 @@
   <p *ngIf="termeCerca.touched && termeCerca.errors?.['sensResultats']">
     No s’han trobat resultats
   </p>
-  <div class="resultats">
-    <div *ngFor="let el of resultats()">
-      <h4>{{ el.nom }}</h4>
-      <p>{{ el.descripcio }}</p>
-    </div>
-  </div>
 
 </div>

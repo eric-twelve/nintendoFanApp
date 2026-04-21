@@ -1,5 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component,EventEmitter,Output, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import {
   FormControl,
   ReactiveFormsModule,
@@ -14,10 +15,12 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-formulari-cerca',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './formulari-cerca.component.html'
+  templateUrl: './formulari-cerca.component.html',
+  styleUrl: './formulari-cerca.component.scss',
 })
 export class FormulariCercaComponent {
 
+  @Output() cerca = new EventEmitter<string>();
   private http = inject(HttpClient);
   private apiUrl = 'http://localhost:3000/elements';
 
@@ -36,8 +39,9 @@ export class FormulariCercaComponent {
     this.termeCerca.valueChanges.pipe(
       debounceTime(400),
 
-      tap(() => {
+      tap((value) => {
         this.validant.set(true);
+        this.cerca.emit(value ?? '');
       }),
 
       switchMap(value => {
