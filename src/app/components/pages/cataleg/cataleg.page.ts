@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ElementService } from '../../service/element.service';
+import { ElementService } from '../../../service/element.service';
 
 @Component({
   selector: 'app-cataleg',
