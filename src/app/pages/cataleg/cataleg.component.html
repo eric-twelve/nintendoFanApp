@@ -2,19 +2,18 @@
 
 <ul>
 
-  <li>
-    Zelda
-    <a routerLink="/detall/1">Veure detall</a>
-  </li>
+  @for(videojoc of videojocs; track videojoc.id){
 
-  <li>
-    FIFA 25
-    <a routerLink="/detall/2">Veure detall</a>
-  </li>
+    <li>
 
-  <li>
-    Minecraft
-    <a routerLink="/detall/3">Veure detall</a>
-  </li>
+      {{ videojoc.nom }}
+
+      <a [routerLink]="['/detall', videojoc.id]">
+        Veure detall
+      </a>
+
+    </li>
+
+  }
 
 </ul>

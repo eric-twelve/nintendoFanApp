@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav>
 
   <a
     routerLink="/cataleg"
@@ -21,11 +21,28 @@
     Preferits
   </a>
 
-  <a
-    routerLink="/login"
-    routerLinkActive="active"
-  >
-    Login
-  </a>
+  @if((usuari$ | async) === null){
+
+    <a
+      routerLink="/login"
+      routerLinkActive="active"
+    >
+      Iniciar sessió
+    </a>
+
+  }
+
+  @if((usuari$ | async) !== null){
+
+    <span>
+      Usuari:
+      {{ (usuari$ | async)?.nom }}
+    </span>
+
+    <button (click)="logout()">
+      Tancar sessió
+    </button>
+
+  }
 
 </nav>

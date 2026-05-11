@@ -1,12 +1,17 @@
-<h1>Vista detall</h1>
-
-<p>ID rebut per URL: {{ id }}</p>
-
 @if(videojoc){
+  <h1>{{ videojoc.nom }}</h1>
+  <p>
+    Id detall: 
+    {{videojoc.id}}
+  </p>
+  <p>  
+    Gènere:
+    {{ videojoc.genere }}
+  </p>
+}
 
-  <div class="card">
-    <h2>{{ videojoc.nom }}</h2>
-    <p>Gènere: {{ videojoc.genere }}</p>
-  </div>
-
+@else {
+  <p>
+    Videojoc no trobat
+  </p>
 }

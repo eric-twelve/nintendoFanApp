@@ -1,7 +1,24 @@
-<h1>Login</h1>
+<h2>Iniciar sessió</h2>
+<form (ngSubmit)="iniciarSessio()">
+  <input
+    type="email"
+    placeholder="Email"
+    [(ngModel)]="email"
+    name="email"
+  >
+  <input
+    type="password"
+    placeholder="Contrasenya"
+    [(ngModel)]="contrasenya"
+    name="contrasenya"
+  >
+  <button type="submit">
+    Entrar
+  </button>
+</form>
 
-<form>
-  <input type="email" placeholder="Correu">
-  <input type="password" placeholder="Contrasenya">
-  <button>Entrar</button>
-</form> 
+@if(error){
+  <p class="error">
+    Credencials incorrectes
+  </p>
+}

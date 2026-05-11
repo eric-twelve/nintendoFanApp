@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { VideojocService } from '../../services/videojoc.service';
 
 @Component({
   selector: 'app-detall',
@@ -8,28 +9,24 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './detall.component.html',
   styleUrl: './detall.component.scss'
 })
+
 export class DetallComponent implements OnInit {
 
-  id: string | null = null;
-
-  videojocs = [
-    { id: 1, nom: 'Zelda', genere: 'Aventura' },
-    { id: 2, nom: 'FIFA 25', genere: 'Esports' },
-    { id: 3, nom: 'Minecraft', genere: 'Sandbox' }
-  ];
-
   videojoc: any;
-
-  constructor(private route: ActivatedRoute) {}
+  
+  constructor(
+    private route: ActivatedRoute,
+    private videojocService: VideojocService
+  ) {}
 
   ngOnInit(): void {
+    const id =
+      Number(
+        this.route.snapshot.paramMap.get('id')
+      );
 
-    this.id = this.route.snapshot.paramMap.get('id');
-
-    this.videojoc = this.videojocs.find(
-      v => v.id === Number(this.id)
-    );
-
+    this.videojoc =
+      this.videojocService
+      .obtenirVideojocPerId(id);
   }
-
 }

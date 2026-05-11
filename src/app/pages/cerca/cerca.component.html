@@ -3,19 +3,27 @@
 <input
   type="text"
   [(ngModel)]="textCerca"
-  placeholder="Escriu un nom..."
+  placeholder="Buscar videojoc"
 >
 
-<h3>Resultats:</h3>
-
 <ul>
-  @for(videojoc of videojocs; track videojoc){
 
-    @if(videojoc.toLowerCase().includes(textCerca.toLowerCase())){
+  @for(videojoc of videojocs; track videojoc.id){
 
-      <li>{{ videojoc }}</li>
+    @if(
+      videojoc.nom
+        .toLowerCase()
+        .includes(textCerca.toLowerCase())
+    ){
+
+      <li>
+
+        {{ videojoc.nom }}
+
+      </li>
 
     }
 
   }
+
 </ul>
