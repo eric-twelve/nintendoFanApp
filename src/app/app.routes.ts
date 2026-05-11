@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 
+
 import { authGuard } from './guards/auth.guard';
 import { CatalegComponent } from './pages/cataleg/cataleg.component';
 import { CercaComponent } from './pages/cerca/cerca.component';
 import { DetallComponent } from './pages/detall/detall.component';
-import { PreferitsComponent } from './pages/preferits/preferits.component';
 import { LoginComponent } from './pages/login/login.component';
 
 
@@ -33,7 +33,9 @@ export const routes: Routes = [
 
   {
   path: 'preferits',
-  component: PreferitsComponent,
+  loadComponent: () =>
+    import('./pages/preferits/preferits.component')
+      .then(m => m.PreferitsComponent),
   canActivate: [authGuard]
   },
 
