@@ -1,19 +1,13 @@
-<h1>Catàleg de videojocs</h1>
+<cdk-virtual-scroll-viewport
+  itemSize="80"
+  style="height: 500px;">
 
-<ul>
+  <div *cdkVirtualFor="let element of videojocs">
 
-  @for(videojoc of videojocs; track videojoc.id){
+    <app-element-card
+      [element]="element">
+    </app-element-card>
 
-    <li>
+  </div>
 
-      {{ videojoc.nom }}
-
-      <a [routerLink]="['/detall', videojoc.id]">
-        Veure detall
-      </a>
-
-    </li>
-
-  }
-
-</ul>
+</cdk-virtual-scroll-viewport>

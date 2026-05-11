@@ -1,28 +1,28 @@
-import { Component } from '@angular/core';
-
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { VideojocService } from '../../services/videojoc.service';
+import { ElementCardComponent } from '../../components/element-card/element-card.component';
 
 @Component({
   selector: 'app-cataleg',
   standalone: true,
-  imports: [RouterLink],
+  imports: [
+    ScrollingModule,
+    ElementCardComponent
+  ],
   templateUrl: './cataleg.component.html',
   styleUrl: './cataleg.component.scss'
 })
+export class CatalegComponent implements OnInit {
 
-export class CatalegComponent {
-
-  videojocs;
+  videojocs: any[] = [];
 
   constructor(
     private videojocService: VideojocService
-  ) {
+  ) {}
 
-    this.videojocs =
-      this.videojocService.obtenirVideojocs();
-
+  ngOnInit(): void {
+    this.videojocs = this.videojocService.obtenirVideojocs();
   }
-
 }
